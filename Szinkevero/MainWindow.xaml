@@ -1,0 +1,53 @@
+﻿<Window x:Class="Szinkevero.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szinkevero"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Slider x:Name="sliPiros" Grid.Column="1" Minimum="0" Maximum="255" VerticalAlignment="Center" ValueChanged="sliRGB_ValueChanged"/>
+        <Label Grid.Column="2" Content="Piros" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <!--+-->
+        <Label x:Name="Piroslabel" Grid.Column="0" Content="120" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Slider x:Name="sliZold" Grid.Column="1" Grid.Row="1" Minimum="0" Maximum="255" VerticalAlignment="Center" ValueChanged="sliRGB_ValueChanged"/>
+        <Label Grid.Column="2" Content="Zold" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <!--+-->
+        <Label x:Name="Zoldlabel" Grid.Column="0" Content="120" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Slider x:Name="sliKek" Grid.Column="1" Minimum="0" Grid.Row="2" Maximum="255" VerticalAlignment="Center" ValueChanged="sliRGB_ValueChanged"/>
+        <Label Grid.Column="2" Grid.Row="2" Content="Kek" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <!--+-->
+        <Label x:Name="Keklabel" Grid.Column="0" Grid.Row="2" Content="120" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        
+        <Grid Grid.Row="3" Grid.ColumnSpan="3" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        <Button x:Name="btnRogzit" Grid.Column="0" Content="Rögzít" Grid.Row="3" Click="btnRogzit_Click"/>
+        <Button x:Name="btnTorol" Grid.Column="1" Content="Töröl" Grid.Row="3" Click="btnTorol_Click"/>
+        <Button x:Name="btnUrit" Grid.Column="2" Content="Ürítés" Grid.Row="3" Click="btnUrit_Click"/>
+        </Grid>
+
+        <ListBox x:Name="lbSzinek" Background="LightGoldenrodYellow" Grid.ColumnSpan="3" Grid.Row="4" Margin="5" SelectionChanged="kivalaszt"/>
+        <Rectangle x:Name="rctTeglalap" Grid.Row="5" Grid.ColumnSpan="3" Fill="Black" Margin="10"/>
+    </Grid>
+</Window>
